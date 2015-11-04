@@ -21,3 +21,7 @@ def index():
 @app.route('/time')
 def time():
     return str(datetime.now())
+
+@app.route('/team')
+def team():
+    return str('Raindrop Studio')
