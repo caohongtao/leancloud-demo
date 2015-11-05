@@ -6,6 +6,7 @@ from flask import Flask
 from flask import render_template
 
 from views.todos import todos_view
+from utils.logger import Logger
 
 app = Flask(__name__)
 
@@ -25,3 +26,8 @@ def time():
 @app.route('/team')
 def team():
     return str('Raindrop Studio')
+
+@app.route('/wechat')
+def wechat():
+    Logger.println('echostr:'+request.args.get('echostr', ''))
+    return request.args.get('echostr', '')
